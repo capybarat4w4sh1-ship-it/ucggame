@@ -237,42 +237,6 @@ return ids.map(id => ({ ...RAW_CARD_DATA.find(c => c.id === id), uid: Math.rando
 
 // ==========================================
 
-const styles = `
-
-@keyframes toastIn { 0% { transform: translateY(-20px); opacity: 0; } 10% { transform: translateY(0); opacity: 1; } 90% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-20px); opacity: 0; } }
-
-@keyframes drawCard { 0% { transform: translate(100px, -200px) rotate(30deg); opacity: 0; } 100% { transform: translate(0, 0) rotate(0deg); opacity: 1; } }
-
-.animate-toast { animation: toastIn 2.2s ease-in-out forwards; }
-
-.animate-draw { animation: drawCard 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-
-.no-scrollbar::-webkit-scrollbar { display: none; }
-
-.perspective-1000 { perspective: 1000px; }
-
-.backface-hidden { backface-visibility: hidden; }
-
-.flip-card-inner { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; position: relative; width: 100%; height: 100%; }
-
-.flipped { transform: rotateY(180deg); }
-
-.card-sprite {
-
-background-image: url('${ASSETS.CARD_SPRITE}');
-
-background-size: 600% 500%;
-
-image-rendering: pixelated;
-
-}
-
-@keyframes diceShake { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(10deg); } 75% { transform: rotate(-10deg); } }
-
-.animate-dice-shake { animation: diceShake 0.1s infinite; }
-
-`;
-
 
 
 // ==========================================
@@ -574,7 +538,6 @@ return (
 
 <div className="w-full h-screen bg-slate-950 text-slate-100 font-sans overflow-hidden flex flex-col relative select-none">
 
-<style>{styles}</style>
 
 
 {view === 'title' && <TitleScreen setView={handleSetView} />}
